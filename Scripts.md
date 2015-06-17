@@ -1,7 +1,7 @@
-##Criar tablespace:
+###Criar tablespace:
 CREATE TABLESPACE DATA01 DATAFILE 'ORACLE_DATA/data01.dbf' SIZE 10M;
 
-##Alterar tablespace:
+###Alterar tablespace:
 ALTER TABLESPACE DATA01 READ ONLY;
 
 
