@@ -1,6 +1,9 @@
 ###Criar tablespace:
 CREATE TABLESPACE DATA01 
 	DATAFILE 'ORACLE_DATA/data01.dbf' SIZE 10M;
+    
+    DATA01 						= Estrutura lógica
+	'ORACLE_DATA/data01.dbf' 	= Estrutura física    
 
 CREATE TABLESPACE DATA01
 	DATAFILE 'ORACLE_DATA/data01.dbf' SIZE 10M
