@@ -31,7 +31,8 @@ ALTER DATABASE
 ###Movimentação de arquivos de dados da tablespace
 
 tablespace deve estar off-line => alter tablespace data01 offline;
-Os arquivos de dados de destino devem existir
+
+Os arquivos de dados de destino devem existir, ou seja, aqui apenas mudamos o ponteiro do oracle. Os arquivos devem ser movidos manualmente via sistema operacional
 
 ALTER TABLESPACE userdata RENAME
 	DATAFILE '$ORACLE_DATA/data01.dbf'
