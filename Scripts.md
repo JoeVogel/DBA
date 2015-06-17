@@ -28,7 +28,7 @@ ALTER DATABASE
 	DATAFILE '/u03/oradata/userdata02.dbf'
     RESIZE 200M;	//Aumenta o tamanho alocado para o database
     
-###Movimentação de arquivos de dados
+###Movimentação de arquivos de dados da tablespace
 
 tablespace deve estar off-line => alter tablespace data01 offline;
 Os arquivos de dados de destino devem existir
