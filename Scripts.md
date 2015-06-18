@@ -32,13 +32,26 @@ ALTER DATABASE
 
 tablespace deve estar off-line => alter tablespace data01 offline;
 
-Os arquivos de dados de destino devem existir, ou seja, aqui apenas mudamos o ponteiro do oracle. Os arquivos devem ser movidos manualmente via sistema operacional
+Os arquivos de dados de destino devem existir, ou seja, aqui apenas mudamos o ponteiro do oracle. Os arquivos devem ser movidos manualmente via sistema operacional (estando na pasta destino, cp $ORACLE_DATA/data01.dbf .) Este ponto no final faz parte do comando
 
 ALTER TABLESPACE userdata RENAME
 	DATAFILE '$ORACLE_DATA/data01.dbf'
     TO '$HOME/data01.dbf';
     
 passar tablespace para online => alter tablespace data01 online;
+
+
+###Eliminando tablespaces
+
+Não será possivel eliminar um tablespace se ele:
+	- Estiver no tablespace SYSTEM
+    - Tiver segmentos ativos
+    
+INCLUDING CONTENTS elimina os segmentos
+INCLUDING CONTENTS AND DATAFILES deleta arquivos de dados
+CASCADE CONSTRAINTS elimina todas as 
+
+DROP TABLESPACE ronly INCLUDING CONTENTS AND DATAFILES;
 
 
 
