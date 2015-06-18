@@ -6,6 +6,7 @@ dba_data_files
 dba_extents
 dba_segments
 dba_free_space
+dba_tablespaces
     
 ###Uteis
 
