@@ -8,9 +8,12 @@ dba_segments
 dba_free_space
 dba_tablespaces
     
+###Tamanho de tabela
+
+PCTFREE
+PCTUSED
+
 ###Uteis
 
 $ORACLE_DATA
 $HOME
-    
-
