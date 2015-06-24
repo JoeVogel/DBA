@@ -53,6 +53,9 @@ CASCADE CONSTRAINTS elimina todas as
 
 DROP TABLESPACE ronly INCLUDING CONTENTS AND DATAFILES;
 
+###ELiminando tabelas
 
+DROP TABLE hr.departamentos
+CASCADE CONSTRAINTS;
 
-
+### 
