@@ -1,5 +1,9 @@
 ##DBA 1
 
+###Conectar com sys
+connect sys as sysdba  
+passwd = manager
+
 ###Criar tablespace:
 
 CREATE TABLESPACE data01 
@@ -97,3 +101,15 @@ Parâmetro: AUDIT_TRAIL
 NONE = auditoria desativada <br />
 DB   = auditoria ativa e direciona todos os registros para a trilha do BD <br />
 SO   = auditoria ativa e direciona os registros para um log do S.O.
+
+alter system set audit_trail = 'DB' scope = spfile;
+
+Após mudar o parametro, logar como SYS (primeira linha mostra como faz) e faz:  
+SHUTDOWN IMMEDIATE;
+STARTUP;
+
+###Fazer auditoria em uma tabela
+
+AUDIT SELECT ON scott.emp BY ACCESS WHENEVER SUCCESSFUL
+
+SELECT username, obj_name, action_name, priv_used FROM sys.dba_audit_object WHERE owner = 'SCOTT' AND obj_name = 'EMP';
