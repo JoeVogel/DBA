@@ -83,8 +83,17 @@ SELECT * FROM DBA_USERS;
 DESC DBA_TS_QUOTAS;
 SELECT * FROM DBA_TS_QUOTAS;
 
-###
+###Exibir cotas
 SELECT tablespace_name, sum(bytes)/1024 quota
 FROM dba_ts_quotas
 WHERE username = 'AARON'
 GROUP BY tablespace_name;
+
+###Auditoria
+SHOW PARAMETER AUDIT
+
+Parâmetro: AUDIT_TRAIL
+
+none = auditoria desativada
+db   = auditoria ativa e direciona todos os registros para a trilha do BD
+so   = auditoria ativa e direciona os registros para um log do S.O.
