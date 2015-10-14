@@ -94,6 +94,6 @@ SHOW PARAMETER AUDIT
 
 Parâmetro: AUDIT_TRAIL
 
-NONE = auditoria desativada /br
-DB   = auditoria ativa e direciona todos os registros para a trilha do BD /br
+NONE = auditoria desativada <br />
+DB   = auditoria ativa e direciona todos os registros para a trilha do BD <br />
 SO   = auditoria ativa e direciona os registros para um log do S.O.
