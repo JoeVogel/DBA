@@ -113,3 +113,12 @@ STARTUP;
 AUDIT SELECT ON scott.emp BY ACCESS WHENEVER SUCCESSFUL
 
 SELECT username, obj_name, action_name, priv_used FROM sys.dba_audit_object WHERE owner = 'SCOTT' AND obj_name = 'EMP';
+
+###Remover auditoria
+NOAUDIT SELECT ON scott.emp;
+
+###Ver sessões ativas
+SELECT username, sid, serial# from V$session;
+
+###Matar sessão
+ALTER SYSTEM KILL SESSION "SID, SERIAL#";
