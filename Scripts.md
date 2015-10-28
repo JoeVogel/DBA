@@ -122,3 +122,31 @@ SELECT username, sid, serial# from V$session;
 
 ###Matar sessão
 ALTER SYSTEM KILL SESSION "SID, SERIAL#";
+
+##Backup e Recovery
+
+connect system/manager as sysdba
+
+No terminal do SO:
+
+rman target /
+
+RMAN> startup
+
+RMAN> run { 
+allocate channel t1 type dysk format '/home/oracle/BKP_CF_28102015.rman;
+backup current controlfile tag BKP_CF;
+release t1;
+}
+
+Edita o arquivo controlfile.dbf na pasta $ORACLE_HOME com o banco desativado
+
+Tenta subir o banco. Não vai funcionar
+
+rman target /
+
+RMAN> startup nomount;
+
+RMAN> restore controlfile from '/home/oracle/BKP_CF_28102015.rman';
+
+
