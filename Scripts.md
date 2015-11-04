@@ -149,4 +149,24 @@ RMAN> startup nomount;
 
 RMAN> restore controlfile from '/home/oracle/BKP_CF_28102015.rman';
 
+###Detalhar ações de uma query
 
+explain plan for
+select * from scott.emp
+where job like 'M%';
+
+select * from table(DBMS_XPLAN.DISPLAY);
+
+###Ligar autotrace (ao fazer qualquer consulta ele já fará automaticamente o display do XPLAIN)
+
+set autotrace on;
+
+###Desligar autotrace
+
+set autotrace off;
+
+###Exemplo de consulta para usar no trace
+
+select ename, dname, sal, loc from scott.emp, scott.dept;
+
+select ename, dname, sal, loc from scott.emp e, scott.dept d where e.depno = d.deptno;
