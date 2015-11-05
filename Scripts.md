@@ -170,3 +170,21 @@ set autotrace off;
 select ename, dname, sal, loc from scott.emp, scott.dept;
 
 select ename, dname, sal, loc from scott.emp e, scott.dept d where e.depno = d.deptno;
+
+###Atividades:
+
+###1) Criar um plano de execução para um SQL, 
+
+###A) que selecione: Nome do empregado (ENAME), Nome do departamento (DNAME) e sua grade de salário (GRADE):
+
+select ename, dname, grade from scott.emp e, scott.dept d, scott.salgrade s
+where e.deptno = d.deptno and e.sal between s.losal and s.hisal;
+
+###B) que selecione: Nome do departamento (DNAME) e quantidade de empregados por departamento
+
+select dname, count(e.empno) from scott.emp e join scott.dept d on e.deptno = d.deptno;
+
+###C) que selecione: todos os empregados com salário maior que 1000:
+
+select ename, sal from scott.emp e where e.sal > 1000;
+
